@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="SaaSAuthentication" Class="AuthenticationEntitiesDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="WebSettings" ConnectionString="Data Source=.\SQLEXPRESS;Initial Catalog=SaaSAuthentication;Persist Security Info=True;User ID=joel.cogley" SettingsObjectName="System.Configuration.ConfigurationManager.ConnectionStrings" SettingsPropertyName="SaaSAuthenticationConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.Tenants" Member="Tenants">
+    <Type Name="Tenant">
+      <Column Name="TenantId" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="CompanyName" Type="System.String" DbType="NVarChar(200) NOT NULL" CanBeNull="false" />
+      <Column Name="CompanyUrl" Type="System.String" DbType="NVarChar(200) NOT NULL" CanBeNull="false" />
+      <Column Name="SubscriptionPlan" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Association Name="Tenant_UsersInTenant" Member="UsersInTenants" ThisKey="TenantId" OtherKey="TenantId" Type="UsersInTenant" />
+    </Type>
+  </Table>
+  <Table Name="dbo.UsersInTenants" Member="UsersInTenants">
+    <Type Name="UsersInTenant">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="UserId" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" CanBeNull="false" />
+      <Column Name="TenantId" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" CanBeNull="false" />
+      <Association Name="Tenant_UsersInTenant" Member="Tenant" ThisKey="TenantId" OtherKey="TenantId" Type="Tenant" IsForeignKey="true" />
+    </Type>
+  </Table>
+</Database>

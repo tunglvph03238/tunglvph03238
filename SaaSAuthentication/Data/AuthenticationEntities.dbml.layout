@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11, 8.5" name="AuthenticationEntities">
+  <DataContextMoniker Name="/AuthenticationEntitiesDataContext" />
+  <nestedChildShapes>
+    <classShape Id="b2376670-abcf-4140-be05-a5c1a3dc4713" absoluteBounds="0.75, 0.875, 2, 1.5785953776041664">
+      <DataClassMoniker Name="/AuthenticationEntitiesDataContext/Tenant" />
+      <nestedChildShapes>
+        <elementListCompartment Id="2c3069a0-8f31-42e8-b2be-d61fcfd0565b" absoluteBounds="0.765, 1.335, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="b944b635-47fc-4ccc-bb6f-63d1d7ac7ce4" absoluteBounds="3.5, 0.875, 2, 1.3862939453125">
+      <DataClassMoniker Name="/AuthenticationEntitiesDataContext/UsersInTenant" />
+      <nestedChildShapes>
+        <elementListCompartment Id="19995f03-b002-41a3-bccd-792d111bf997" absoluteBounds="3.5149999999999997, 1.335, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(2.75 : 1.56814697265625); (3.5 : 1.56814697265625)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/AuthenticationEntitiesDataContext/Tenant/Tenant_UsersInTenant" />
+      <nodes>
+        <classShapeMoniker Id="b2376670-abcf-4140-be05-a5c1a3dc4713" />
+        <classShapeMoniker Id="b944b635-47fc-4ccc-bb6f-63d1d7ac7ce4" />
+      </nodes>
+    </associationConnector>
+  </nestedChildShapes>
+</ordesignerObjectsDiagram>
